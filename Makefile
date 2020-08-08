@@ -13,6 +13,7 @@ tidy:
 	 make -s -C $${dir} clean; done
 	@find * -type f | awk -F '/' '$$NF~/^\._/' | xargs rm -vf
 
+
 dist: tidy
 	@echo " DIST"
 	@pushd .. >/dev/null; \
@@ -31,4 +32,3 @@ dist: tidy
 	 fi; \
 	 tar cf $${ftar} ppm/ && gzip -9 $${ftar}; \
 	 popd >/dev/null
-
